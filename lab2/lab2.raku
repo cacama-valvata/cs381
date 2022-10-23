@@ -1,5 +1,5 @@
 ######################################### 	
-#    CS 381 - Programming Lab #1		#
+#    CS 381 - Programming Lab #2		#
 #										#
 #  < SOLUTION > 						#
 #  colleyc@oregonstate.edu				#
@@ -295,11 +295,36 @@ sub build_bigrams {
 	##########################
 	
 	
-	##########################
-	##                      ## 
-	## <Insert code here>   ##
-	##                      ##   
-	##########################
+	# sugma
+	for @tracks -> $eachtitle
+	{
+		my @words = split('\s', $eachtitle);
+		
+		# check if there's more than one word
+		next unless @words.elems > 1;
+
+		loop (my $i = 1; $i < @words.elems; $i++)
+		{
+			my $first = @words[i-1];
+			my $second = @words[i];
+
+			if %counts{$first}:exists
+			{
+				if %counts{$first}{$second}:exists
+				{
+					%counts{$first}{$second} += 1;
+				}
+				else
+				{
+					%counts{$first}.push: ($second=>1);
+				}
+			}
+			else
+			{
+				%counts.push: ($first=>($second=>1));
+			}
+		}
+	}
 
 
 	########################## End Task Bigram Counts
