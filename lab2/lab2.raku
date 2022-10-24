@@ -294,38 +294,39 @@ sub build_bigrams {
 	##     there is no need to take exactly 10 lines)
 	##########################
 	
-	
-	# sugma
+	# use constructor for hash
+	%counts = %();
+
+	# for each track title
 	for @tracks -> $eachtitle
 	{
-		my @words = split('\s', $eachtitle);
+		my @words = split(/\s/, $eachtitle);
 		
 		# check if there's more than one word
 		next unless @words.elems > 1;
 
-		loop (my $i = 1; $i < @words.elems; $i++)
+		# for each word (really, each adjacent word-pair)
+		loop (my $iter = 1; $iter < @words.elems; $iter++)
 		{
-			my $first = @words[i-1];
-			my $second = @words[i];
+			my $first = @words[$iter-1];
+			my $second = @words[$iter];
 
-			if %counts{$first}:exists
+			# add the preceding word to the hash if not already in it
+			%counts{$first} = %() unless %counts{$first}:exists;
+
+			# if the following word has been added before
+			if (%counts{$first}{$second}:exists)
 			{
-				if %counts{$first}{$second}:exists
-				{
-					%counts{$first}{$second} += 1;
-				}
-				else
-				{
-					%counts{$first}.push: ($second=>1);
-				}
+				# then increment the count of references
+				%counts{$first}{$second} += 1;
 			}
 			else
 			{
-				%counts.push: ($first=>($second=>1));
+				# add it to the hash and initialize the count for it
+				%counts{$first}{$second} = 1;
 			}
 		}
 	}
-
 
 	########################## End Task Bigram Counts
 	
