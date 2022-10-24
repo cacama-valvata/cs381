@@ -409,14 +409,20 @@ sub sequence {
 	## My solution is about 12 lines (and could have been less)
 	##########################
 	
-	
-	##########################
-	##                      ## 
-	## <Insert code here>   ##
-	##                      ##   
-	##########################
+	my $seed = @_[0].lc;
 
+	my $sequence = "";
+	my $next_word = mcw($seed);
+	my $iter = 0;
 
+	while ($next_word ~~ /\S/ and $iter < $SEQUENCE_LENGTH)
+	{
+		$sequence = $sequence ~ $next_word ~ " ";
+		$next_word = mcw($next_word);
+		$iter += 1;
+	}
+
+	return $sequence.trim-trailing;
 		
 	# return the sequence you created instead of this measely string
 	return "ERROR: SEQUENCE 404";
