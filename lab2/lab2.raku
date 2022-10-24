@@ -370,8 +370,7 @@ sub mcw {
 	
 	for @all_next_words -> $next_word
 	{
-		# Change later for task 4
-		#     Check word_history
+		next if %word_history{$next_word}:exists;
 
 		if (%counts{$word}{$next_word} > %counts{$word}{$best_word})
 		{
@@ -410,14 +409,16 @@ sub sequence {
 	##########################
 	
 	my $seed = @_[0].lc;
+	%word_history{$seed} = 1;
 
-	my $sequence = "";
+	my $sequence = $seed ~ " ";
 	my $next_word = mcw($seed);
-	my $iter = 0;
+	my $iter = 1;
 
 	while ($next_word ~~ /\S/ and $iter < $SEQUENCE_LENGTH)
 	{
 		$sequence = $sequence ~ $next_word ~ " ";
+		%word_history{$next_word} = 1;
 		$next_word = mcw($next_word);
 		$iter += 1;
 	}
