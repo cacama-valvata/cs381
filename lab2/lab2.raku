@@ -364,14 +364,20 @@ sub mcw {
 	##
 	## This comment is longer than your code will be for this task. 
 	##########################
-	
-	
-	##########################
-	##                      ## 
-	## <Insert code here>   ##
-	##                      ##   
-	##########################
 
+	# returns a "sequence" object which is iterable
+	my @all_next_words = %counts{$word}.keys.sort;
+	
+	for @all_next_words -> $next_word
+	{
+		# Change later for task 4
+		#     Check word_history
+
+		if (%counts{$word}{$next_word} > %counts{$word}{$best_word})
+		{
+			$best_word = $next_word;
+		}
+	}
 
 	########################## End Task MCW
 	
