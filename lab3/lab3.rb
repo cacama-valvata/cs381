@@ -5,8 +5,8 @@
 ######################################### 	
 #     CS 381 - Programming Lab #3		#
 #										#
-#  < your name >					 	#
-#  < your email >	                	#
+#  Casey Colley 					 	#
+#  colleyc@oregonstate.edu             	#
 #										#
 #########################################
 
