@@ -1,4 +1,4 @@
-#require_relative "element"   # uncomment to load element.rb
+require_relative "element"   # uncomment to load element.rb
 #require_relative "player"    # uncomment to load player.rb 
 #require_relative "history"   # uncomment to load history.rb
 
@@ -11,9 +11,11 @@
 #########################################
 
 
-
-# your code here
-
+#rock  = Rock.new('Rock')
+#paper = Paper.new('Paper')
+#puts rock.compare_to(paper)
+#puts paper.compare_to(rock)
+#puts rock.compare_to(rock)
 
 
 def game(rounds)
