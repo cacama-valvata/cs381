@@ -14,15 +14,15 @@ class Rock < Element
     def compare_to (other)
         case other.name
         when "Lizard"
-            return "Rock crushes lizard", "Win"
+            return "Rock crushes Lizard", "Win"
         when "Scissors"
-            return "Rock crushes scissors", "Win"
+            return "Rock crushes Scissors", "Win"
         when "Paper"
-            return "Paper covers rock", "Lose"
+            return "Paper covers Rock", "Lose"
         when "Spock"
-            return "Spock vaporizes rock", "Lose"
+            return "Spock vaporizes Rock", "Lose"
         when "Rock"
-            return "Rock equals rock", "Tie"
+            return "Rock equals Rock", "Tie"
         end
     end
 end
@@ -31,15 +31,15 @@ class Paper < Element
     def compare_to (other)
         case other.name
         when "Lizard"
-            return "Lizard eats paper", "Lose"
+            return "Lizard eats Paper", "Lose"
         when "Scissors"
-            return "Scissors cut paper", "Lose"
+            return "Scissors cut Paper", "Lose"
         when "Rock"
-            return "Paper covers rock", "Win"
+            return "Paper covers Rock", "Win"
         when "Spock"
-            return "Paper disproves spock", "Win"
+            return "Paper disproves Spock", "Win"
         when "Paper"
-            return "Paper equals paper", "Tie"
+            return "Paper equals Paper", "Tie"
         end
     end
 end
@@ -48,15 +48,15 @@ class Scissors < Element
     def compare_to (other)
         case other.name
         when "Rock"
-            return "Rock crushes scissors", "Lose"
+            return "Rock crushes Scissors", "Lose"
         when "Paper"
-            return "Scissors cuts paper", "Win"
+            return "Scissors cuts Paper", "Win"
         when "Lizard"
-            return "Scissors decapitate lizard", "Win"
+            return "Scissors decapitate Lizard", "Win"
         when "Spock"
-            return "Spock smashes scissors", "Lose"
+            return "Spock smashes Scissors", "Lose"
         when "Scissors"
-            return "Scissors equals scissors", "Tie"
+            return "Scissors equals Scissors", "Tie"
         end
     end
 end
@@ -65,15 +65,15 @@ class Lizard < Element
     def compare_to (other)
         case other.name
         when "Rock"
-            return "Rock crushes lizard", "Lose"
+            return "Rock crushes Lizard", "Lose"
         when "Paper"
-            return "Lizard eats paper", "Win"
+            return "Lizard eats Paper", "Win"
         when "Scissors"
-            return "Scissors decapitate lizard", "Lose"
+            return "Scissors decapitate Lizard", "Lose"
         when "Spock"
-            return "Lizard poisons spock", "Win"
+            return "Lizard poisons Spock", "Win"
         when "Lizard"
-            return "Lizard equals lizard", "Tie"
+            return "Lizard equals Lizard", "Tie"
         end
     end
 end
@@ -82,15 +82,15 @@ class Spock < Element
     def compare_to (other)
         case other.name
         when "Rock"
-            return "Spock vaporizes rock", "Win"
+            return "Spock vaporizes Rock", "Win"
         when "Paper"
-            return "Paper disproves spock", "Lose"
+            return "Paper disproves Spock", "Lose"
         when "Scissors"
-            return "Spock smsahes scissors", "Win"
+            return "Spock smsahes Scissors", "Win"
         when "Lizard"
-            return "Lizard poisons spock", "Lose"
+            return "Lizard poisons Spock", "Lose"
         when "Spock"
-            return "Spock equals spock", "Tie"
+            return "Spock equals Spock", "Tie"
         end
     end
 end

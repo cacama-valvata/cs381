@@ -16,19 +16,19 @@ end
 
 class StupidBot < Player
     def play ()
-        @history.log_play("Rock")
+        @history.log_play($rock)
     end
 end
 
 class RandomBot < Player
     def play ()
-        @history.log_play(%w(Rock Paper Scissors Lizard Spock).sample)
+        @history.log_play($moves.sample)
     end
 end
 
 class IterativeBot < Player
     def play ()
-        @history.log_play((%w(Rock Paper Scissors Lizard Spock) - @history.plays[...4]).sample)
+        @history.log_play(($moves - @history.plays[...4]).sample)
     end
 end
 
@@ -50,6 +50,6 @@ class Human < Player
             n = gets.chomp.to_i
             puts "Invalid move - try again" if n > 5
         end while n > 5
-        return %w(Rock Paper Scissors Lizard Spock)[n - 1]
+        return $moves[n - 1]
     end
 end
