@@ -1,4 +1,4 @@
-class history
+class History
     attr_accessor :plays
     attr_accessor :opponent_plays
     attr_accessor :score
@@ -10,11 +10,13 @@ class history
     end
 
     def log_play (move)
-        @plays.push(move)!
+        @plays.push(move)
+        return move
     end
 
     def log_opponent_play (move)
-        @opponent_plays.push(move)!
+        @opponent_plays.push(move)
+        return move
     end
 
     def add_score ()
