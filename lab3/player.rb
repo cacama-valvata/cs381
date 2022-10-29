@@ -34,7 +34,7 @@ end
 
 class LastPlayBot < Player
     def play ()
-        @history.log_play((@history.opponent_plays.length > 0) ? @history.opponent_plays[-1] : "Rock")
+        @history.log_play((@history.opponent_plays.length > 0) ? @history.opponent_plays[-1] : $rock)
     end
 end
 
@@ -46,7 +46,7 @@ class Human < Player
             puts "(3) Scissors"
             puts "(4) Lizard"
             puts "(5) Spock"
-            prints "Enter your move: "
+            print "Enter your move: "
             n = gets.chomp.to_i
             puts "Invalid move - try again" if n > 5
         end while n > 5
