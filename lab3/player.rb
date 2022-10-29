@@ -49,8 +49,8 @@ class Human < Player
             puts "(5) Spock"
             print "Enter your move: "
             n = gets.chomp.to_i
-            puts "Invalid move - try again" if n > 5
-        end while n > 5
+            puts "Invalid move - try again" if n > 5 or n < 1
+        end while n > 5 or n < 1
         return $moves[n - 1]
     end
 end
