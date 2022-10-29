@@ -28,7 +28,8 @@ end
 
 class IterativeBot < Player
     def play ()
-        @history.log_play(($moves - @history.plays[...4]).sample)
+        move = history.plays.length > 0 ? $moves[ ($moves.index(@history.plays[-1]) + 1) % 5 ] : $moves[0]
+        @history.log_play(move)
     end
 end
 
