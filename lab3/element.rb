@@ -50,7 +50,7 @@ class Scissors < Element
         when "Rock"
             return "Rock crushes Scissors", "Lose"
         when "Paper"
-            return "Scissors cuts Paper", "Win"
+            return "Scissors cut Paper", "Win"
         when "Lizard"
             return "Scissors decapitate Lizard", "Win"
         when "Spock"
