@@ -53,7 +53,7 @@ def game(rounds)
 
 	i = 0
 	while i < rounds
-		puts "Round #{i+1}"
+		puts "Round #{i+1}:"
 
 		m1 = p1.play()
 		m2 = p2.play()
