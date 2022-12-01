@@ -58,3 +58,5 @@ older(O,Y):- born(O,M), born(Y,N), M < N.
 younger(Y,O):- born(Y,N), born(O,M), N > M.
 
 regentWhenBorn(X,Y):- born(Y,T), reigned(X,J,K), T > J, T < K.
+
+cousin(C,S):- parent(X,S), parent(Y,C), sibling(X,Y).
