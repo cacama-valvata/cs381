@@ -48,10 +48,10 @@ grandmother(G,C):- grandparent(G,C), female(G).
 grandchild(C,G):- child(C,Y), child(Y,G).
 
 ancestor(A,D):- parent(A,D).
-ancestor(A,D):- ancestor(A,Y), parent(Y,D).
+ancestor(A,D):- parent(Y,D), ancestor(A,Y).
 
 descendant(D,A):- child(D,A).
-descendant(D,A):- descendant(D,Y), child(Y,A).
+descendant(D,A):- child(Y,A), descendant(D,Y).
 
 older(O,Y):- born(O,M), born(Y,N), M < N.
 
