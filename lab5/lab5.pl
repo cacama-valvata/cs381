@@ -46,3 +46,9 @@ grandfather(G,C):- grandparent(G,C), male(G).
 grandmother(G,C):- grandparent(G,C), female(G).
 
 grandchild(C,G):- child(C,Y), child(Y,G).
+
+ancestor(A,D):- ancestor(A,Y), parent(Y,D).
+ancestor(A,D):- parent(A,D).
+
+descendant(D,A):- descendant(D,Y), child(Y,A).
+descendant(D,A):- child(D,A).
