@@ -27,7 +27,7 @@ son(S,P):- child(S,P), male(S).
 
 daughter(D,P):- child(D,P), female(D).
 
-sibling(S,T):- parent(Y,S), parent(Y,T).
+sibling(S,T):- parent(Y,S), parent(Y,T), S \== T.
 
 brother(B,C):- sibling(B,C), male(B).
 
@@ -53,8 +53,8 @@ ancestor(A,D):- parent(A,D).
 descendant(D,A):- descendant(D,Y), child(Y,A).
 descendant(D,A):- child(D,A).
 
-older(O,Y):- born(O,M), born(Y,N), M > N.
+older(O,Y):- born(O,M), born(Y,N), M < N.
 
-younger(Y,O):- born(Y,N), born(O,M), N < M.
+younger(Y,O):- born(Y,N), born(O,M), N > M.
 
 regentWhenBorn(X,Y):- born(Y,T), reigned(X,J,K), T > J, T < K.
