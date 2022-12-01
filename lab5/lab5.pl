@@ -52,3 +52,7 @@ ancestor(A,D):- parent(A,D).
 
 descendant(D,A):- descendant(D,Y), child(Y,A).
 descendant(D,A):- child(D,A).
+
+older(O,Y):- born(O,M), born(Y,N), M > N.
+
+younger(Y,O):- born(Y,N), born(O,M), N < M.
